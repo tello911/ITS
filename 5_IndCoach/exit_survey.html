@@ -30,6 +30,85 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f1f1f1;
+        }
+        
+        #exit_survey {
+            background-color: #ffffff;
+            margin: 100px auto;
+            font-family: Raleway;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+        }
+        /* Mark input boxes that gets an error on validation: */
+        
+        input.invalid {
+            background-color: #ffdddd;
+        }
+        /* Hide all steps by default: */
+        
+        .tab {
+            display: none;
+        }
+        
+        button {
+            background-color: #04AA6D;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Raleway;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        #prevBtn {
+            background-color: #bbbbbb;
+        }
+        /* Make circles that indicate the steps of the form: */
+        
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+        
+        .step.active {
+            opacity: 1;
+        }
+        /* Mark the steps that are finished and valid: */
+        
+        .step.finish {
+            background-color: #04AA6D;
+        }
+    </style>
 </head>
 
 <body class="theme-red">
@@ -798,220 +877,76 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>
-                    FORM WIZARD
-                    <small>Taken from <a href="https://github.com/rstaib/jquery-steps" target="_blank">github.com/rstaib/jquery-steps</a> & <a href="https://jqueryvalidation.org/" target="_blank">jqueryvalidation.org</a></small>
-                </h2>
             </div>
-            <!-- Basic Example | Horizontal Layout -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>BASIC EXAMPLE - HORIZONTAL LAYOUT</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="wizard_horizontal">
-                                <h2>First Step</h2>
-                                <section>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut nulla nunc. Maecenas arcu sem, hendrerit a tempor quis, sagittis accumsan tellus. In hac habitasse platea dictumst. Donec a semper dui. Nunc eget quam libero. Nam at felis metus. Nam
-                                        tellus dolor, tristique ac tempus nec, iaculis quis nisi.
-                                    </p>
-                                </section>
-
-                                <h2>Second Step</h2>
-                                <section>
-                                    <p>
-                                        Donec mi sapien, hendrerit nec egestas a, rutrum vitae dolor. Nullam venenatis diam ac ligula elementum pellentesque. In lobortis sollicitudin felis non eleifend. Morbi tristique tellus est, sed tempor elit. Morbi varius, nulla quis condimentum dictum,
-                                        nisi elit condimentum magna, nec venenatis urna quam in nisi. Integer hendrerit sapien a diam adipiscing consectetur. In euismod augue ullamcorper leo dignissim quis elementum arcu porta. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Vestibulum leo velit, blandit ac tempor nec, ultrices id diam. Donec metus lacus, rhoncus sagittis iaculis nec, malesuada a diam. Donec non pulvinar urna. Aliquam id velit lacus.
-                                    </p>
-                                </section>
-
-                                <h2>Third Step</h2>
-                                <section>
-                                    <p>
-                                        Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo, pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat.
-                                        Donec diam massa, porta vel dictum sit amet, iaculis ac massa. Sed elementum dui commodo lectus sollicitudin in auctor mauris venenatis.
-                                    </p>
-                                </section>
-
-                                <h2>Forth Step</h2>
-                                <section>
-                                    <p>
-                                        Quisque at sem turpis, id sagittis diam. Suspendisse malesuada eros posuere mauris vehicula vulputate. Aliquam sed sem tortor. Quisque sed felis ut mauris feugiat iaculis nec ac lectus. Sed consequat vestibulum purus, imperdiet varius est pellentesque
-                                        vitae. Suspendisse consequat cursus eros, vitae tempus enim euismod non. Nullam ut commodo tortor.
-                                    </p>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Basic Example | Horizontal Layout -->
             <!-- Basic Example | Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>BASIC EXAMPLE - VERTICAL LAYOUT</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <h2>Exit Survey</h2>
                         </div>
                         <div class="body">
-                            <div id="wizard_vertical">
-                                <h2>First Step</h2>
-                                <section>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut nulla nunc. Maecenas arcu sem, hendrerit a tempor quis, sagittis accumsan tellus. In hac habitasse platea dictumst. Donec a semper dui. Nunc eget quam libero. Nam at felis metus. Nam
-                                        tellus dolor, tristique ac tempus nec, iaculis quis nisi.
-                                    </p>
-                                </section>
 
-                                <h2>Second Step</h2>
-                                <section>
-                                    <p>
-                                        Donec mi sapien, hendrerit nec egestas a, rutrum vitae dolor. Nullam venenatis diam ac ligula elementum pellentesque. In lobortis sollicitudin felis non eleifend. Morbi tristique tellus est, sed tempor elit. Morbi varius, nulla quis condimentum dictum,
-                                        nisi elit condimentum magna, nec venenatis urna quam in nisi. Integer hendrerit sapien a diam adipiscing consectetur. In euismod augue ullamcorper leo dignissim quis elementum arcu porta. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Vestibulum leo velit, blandit ac tempor nec, ultrices id diam. Donec metus lacus, rhoncus sagittis iaculis nec, malesuada a diam. Donec non pulvinar urna. Aliquam id velit lacus.
-                                    </p>
-                                </section>
 
-                                <h2>Third Step</h2>
-                                <section>
-                                    <p>
-                                        Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo, pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat.
-                                        Donec diam massa, porta vel dictum sit amet, iaculis ac massa. Sed elementum dui commodo lectus sollicitudin in auctor mauris venenatis.
-                                    </p>
-                                </section>
-
-                                <h2>Forth Step</h2>
-                                <section>
-                                    <p>
-                                        Quisque at sem turpis, id sagittis diam. Suspendisse malesuada eros posuere mauris vehicula vulputate. Aliquam sed sem tortor. Quisque sed felis ut mauris feugiat iaculis nec ac lectus. Sed consequat vestibulum purus, imperdiet varius est pellentesque
-                                        vitae. Suspendisse consequat cursus eros, vitae tempus enim euismod non. Nullam ut commodo tortor.
-                                    </p>
-                                </section>
-                            </div>
+                            <body>
+                                <form id="exit_survey" method="POST" action="../exit_survey_process.php" enctype="multipart/form-data">
+                                    <h1>Exit Survey:</h1>
+                                    <!-- One "tab" for each step in the form: -->
+                                    <div class="tab">Name:
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="name" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="tab">Contact Info:
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" name="contact"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="tab">Industry:
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" name="industry"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="tab">Comment:
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="comment"></textarea>
+                                        </div>
+                                    </div>
+                                    <div style="overflow:auto;">
+                                        <div style="float:right;">
+                                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                        </div>
+                                    </div>
+                                    <!-- Circles which indicates the steps of the form: -->
+                                    <div style="text-align:center;margin-top:40px;">
+                                        <span class="step"></span>
+                                        <span class="step"></span>
+                                        <span class="step"></span>
+                                        <span class="step"></span>
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- #END# Basic Example | Vertical Layout -->
-            <!-- Advanced Form Example With Validation -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>ADVANCED FORM EXAMPLE WITH VALIDATION</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <h2>Exit Survey</h2>
                         </div>
                         <div class="body">
-                            <form id="wizard_with_validation" method="POST">
-                                <h3>Account Information</h3>
-                                <fieldset>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" name="username" required>
-                                            <label class="form-label">Username*</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="password" class="form-control" name="password" id="password" required>
-                                            <label class="form-label">Password*</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="password" class="form-control" name="confirm" required>
-                                            <label class="form-label">Confirm Password*</label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <h3>Profile Information</h3>
-                                <fieldset>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" name="name" class="form-control" required>
-                                            <label class="form-label">First Name*</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" name="surname" class="form-control" required>
-                                            <label class="form-label">Last Name*</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="email" name="email" class="form-control" required>
-                                            <label class="form-label">Email*</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <textarea name="address" cols="30" rows="3" class="form-control no-resize" required></textarea>
-                                            <label class="form-label">Address*</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input min="18" type="number" name="age" class="form-control" required>
-                                            <label class="form-label">Age*</label>
-                                        </div>
-                                        <div class="help-info">The warning step will show up if age is less than 18</div>
-                                    </div>
-                                </fieldset>
-
-                                <h3>Terms & Conditions - Finish</h3>
-                                <fieldset>
-                                    <input id="acceptTerms-2" name="acceptTerms" type="checkbox" required>
-                                    <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
-                                </fieldset>
-                            </form>
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf2UWtUSMp6qcFjyDGgzQh6hv0uUilGxCm53hHSOgtZKHX4zg/viewform?embedded=true" width="640" height="3070" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Advanced Form Example With Validation -->
         </div>
     </section>
+
+
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -1043,6 +978,80 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
-</body>
+    <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        function showTab(n) {
+            // This function will display the specified tab of the form...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            //... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            //... and run a function that will display the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+            // This function will figure out which tab to display
+            var x = document.getElementsByClassName("tab");
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            // if you have reached the end of the form...
+            if (currentTab >= x.length) {
+                // ... the form gets submitted:
+                document.getElementById("exit_survey").submit();
+                return false;
+            }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        function validateForm() {
+            // This function deals with validation of the form fields
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            for (i = 0; i < y.length; i++) {
+                // If a field is empty...
+                if (y[i].value == "") {
+                    // add an "invalid" class to the field:
+                    y[i].className += " invalid";
+                    // and set the current valid status to false
+                    valid = false;
+                }
+            }
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class on the current step:
+            x[n].className += " active";
+        }
+    </script>
+    </body>
 
 </html>
