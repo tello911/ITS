@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include '../conn.php';
+?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -832,7 +835,7 @@
                                 <h4 class="modal-title" id="defaultModalLabel">Resume</h4>
                             </div>
                             <div class="modal-body">
-                                <iframe src="../resume/A18CS0001.pdf" width="900" height="1000"></iframe>
+                                <iframe src="../resume/<?php echo "A18CS0001" ?>.pdf" width="900" height="1000"></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
