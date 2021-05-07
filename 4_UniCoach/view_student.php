@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include '../conn.php';
+?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -808,21 +811,6 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>
-                                BASIC EXAMPLE
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -830,37 +818,42 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics Number</th>
+                                            <th>Course</th>
+                                            <th>Resume</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics Number</th>
+                                            <th>Course</th>
+                                            <th>Resume</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        <?php
+                                            $query = "SELECT * FROM student";
+                                            $results = mysqli_query($conn,$query);
+                                            while($row_users = mysqli_fetch_array($results)){
+                                        ?>
                                         <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
+                                            <td><?php echo $row_users['s_name']?></td>
+                                            <td><?php echo $row_users['s_email']?></td>
+                                            <td><?php echo $row_users['s_matrics_num']?></td>
+                                            <td><?php echo $row_users['s_course']?></td>
                                             <td>
                                                 <details style="cursor:pointer;">
                                                     <summary>Resume</summary>
-                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS0001.pdf">Resume</a></p>
+                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_users['s_matrics_num']?>.pdf">Resume</a></p>
                                                 </details>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
