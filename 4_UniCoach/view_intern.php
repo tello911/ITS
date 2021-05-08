@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include '../conn.php';
+?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -799,7 +802,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    INTERN REPORT
+                    VIEW INTERN
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -807,7 +810,6 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -815,50 +817,42 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics <br>Number</th>
+                                            <th>Course</th>
+                                            <th>Resume</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics <br>Number</th>
+                                            <th>Course</th>
+                                            <th>Resume</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        <?php
+                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='hazque99@gmail.com' AND `user`.`u_role`='uc'";
+                                            $results = mysqli_query($conn, $query);
+                                            while($row_users = mysqli_fetch_array($results)){
+                                        ?>
                                         <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
+                                            <td><?php echo $row_users['s_name']?></td>
+                                            <td><?php echo $row_users['s_email']?></td>
+                                            <td><?php echo $row_users['s_matrics_num']?></td>
+                                            <td><?php echo $row_users['s_course']?></td>
                                             <td>
                                                 <details style="cursor:pointer;">
                                                     <summary>Resume</summary>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button> </p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                    </ul>
+                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_users['s_matrics_num']?>.pdf">Resume</a></p>
                                                 </details>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

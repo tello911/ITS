@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include '../conn.php';
+?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -815,50 +818,59 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics <br>Number</th>
+                                            <th>Course</th>
+                                            <th>Report</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics <br>Number</th>
+                                            <th>Course</th>
+                                            <th>Report</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
+                                        <?php
+                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='hazque99@gmail.com' AND `user`.`u_role`='uc'";
+                                            $results = mysqli_query($conn, $query);
+                                            while($row_users = mysqli_fetch_array($results)){
+                                        ?>
+                                            <td><?php echo $row_users['s_name']?></td>
+                                            <td><?php echo $row_users['s_email']?></td>
+                                            <td><?php echo $row_users['s_matrics_num']?></td>
+                                            <td><?php echo $row_users['s_course']?></td>
                                             <td>
                                                 <details style="cursor:pointer;">
-                                                    <summary>Resume</summary>
+                                                    <summary>Click here to see all the reports from the intern</summary>
                                                     <ul>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button> </p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
+                                                        <?php
+                                                            $query = "SELECT * FROM `logbook_student` WHERE `email` = '".$row_users['s_email']."'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while($row_data = mysqli_fetch_array($result)){
+                                                        ?>
+                                                                <li>
+                                                                    <form method="POST" action="../view_intern_report_process.php"> 
+                                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_data['date']?>.pdf"><?php echo $row_data['date']?></a></p>
+                                                                    <input type="hidden" name="id" value=<?php echo $row_data['id']?>>
+                                                                    <input type="submit" name="submit" value="Approve" class="btn btn-success waves">&nbsp&nbsp
+                                                                    <input type="submit" name="submit" value="Delete" class="btn btn-danger waves">
+                                                                    </form>
+                                                                </li>
+                                                        <?php
+                                                            }
+                                                        ?>
                                                     </ul>
                                                 </details>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
