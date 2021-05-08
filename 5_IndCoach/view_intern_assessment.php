@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include '../conn.php';
+?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -799,7 +802,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    INTERN REPORT
+                    INTERN ASSESSMENT
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -815,50 +818,49 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics <br>Number</th>
+                                            <th>Code 1</th>
+                                            <th>Code 2</th>
+                                            <th>Code 3</th>
+                                            <th>Comment</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>Matrics <br>Number</th>
+                                            <th>Code 1</th>
+                                            <th>Code 2</th>
+                                            <th>Code 3</th>
+                                            <th>Comment</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        <?php
+                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='hazque99@gmail.com' AND `user`.`u_role`='uc'";
+                                            $results = mysqli_query($conn, $query);
+                                            while($row_users = mysqli_fetch_array($results)){
+                                        ?>
                                         <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>
-                                                <details style="cursor:pointer;">
-                                                    <summary>Resume</summary>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button> </p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/A18CS001.pdf">Resume</a><button class="btn primary">Test</button></p>
-                                                        </li>
-                                                    </ul>
-                                                </details>
-                                            </td>
+                                            <td><?php echo $row_users['s_name']?></td>
+                                            <td><?php echo $row_users['s_email']?></td>
+                                            <td><?php echo $row_users['s_matrics_num']?></td>
+                                            <form method="POST" action="../view_intern_assessment_process.php">
+                                                <td><input type="number" name="code1" value="0"><br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+                                            </form>
+                                            <form method="POST" action="../view_intern_assessment_process.php">
+                                                <td><input type="number" name="code2" value="0"><br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+                                            </form>
+                                            <form method="POST" action="../view_intern_assessment_process.php">
+                                                <td><input type="number" name="code3" value="0"><br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+                                            </form>
+                                            <td>Noice</td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
