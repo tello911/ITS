@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <base href="AdminBSBMaterialDesign-master1/ITS/" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
@@ -23,24 +24,29 @@
 
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('../../images/utm.jpg');
+        }
+    </style>
 </head>
 
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>BSB</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <h4>Industrial Training System</h4><br>
+            <h5>Universiti Teknologi Malaysia</h5>
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="sign_in" method="POST" action="../../index_process.php">
                     <div class="msg">Sign in to start your session</div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                            <input type="text" class="form-control" name="email" placeholder="email" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -57,7 +63,7 @@
                             <label for="rememberme">Remember Me</label>
                         </div>
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+                            <input class="btn btn-block bg-pink waves-effect" type="submit" name="submit" value="SIGN IN">
                         </div>
                     </div>
                     <div class="col-xs-6 align-right">
