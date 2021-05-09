@@ -836,7 +836,7 @@
                                                     <i class="material-icons">person</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" name="name" class="form-control" placeholder="Username">
+                                                    <input type="text" name="name" class="form-control" placeholder="Username" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -846,7 +846,7 @@
                                             </p>
                                             <div class="input-group">
                                                 <div class="form-line">
-                                                    <input type="password" name="password" class="form-control" placeholder="password">
+                                                    <input type="password" name="password" class="form-control" placeholder="password" required>
                                                 </div>
                                                 <span class="input-group-addon">
                                                     <i class="material-icons">lock</i>
@@ -860,7 +860,7 @@
                                                     <i class="material-icons">email</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" name="email" class="form-control email" placeholder="Ex: example@example.com">
+                                                    <input type="text" name="email" class="form-control email" placeholder="Ex: example@example.com" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -873,7 +873,7 @@
                                                         <i class="material-icons">email</i>
                                                     </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control email" placeholder="Ex: example@example.com">
+                                                    <input type="text" class="form-control email" placeholder="Ex: example@example.com" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -884,7 +884,7 @@
                                                         <i class="material-icons">phone_iphone</i>
                                                     </span>
                                                 <div class="form-line">
-                                                    <input type="text" name="phone" class="form-control mobile-phone-number" placeholder="Ex: +00 (000) 000-00-00">
+                                                    <input type="text" name="phone" class="form-control mobile-phone-number" placeholder="Ex: +00 (000) 000-00-00" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -899,7 +899,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <input type="submit" name="submit" value="Submit" class="btn btn-primary waves-effect">
+                                    <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary waves-effect">
                                 </div>
                             </form>
 
