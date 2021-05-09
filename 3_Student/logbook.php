@@ -821,7 +821,7 @@
                                 </div>
                                 <textarea id="ckeditor" name="logbook">
                                 </textarea>
-                                <input type="submit" name="submit" value="Insert" class="btn btn-primary waves" />
+                                <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Insert" class="btn btn-primary waves" />
                             </form>
 
                         </div>

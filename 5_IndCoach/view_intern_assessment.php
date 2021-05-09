@@ -848,13 +848,13 @@
                                             <td><?php echo $row_users['s_email']?></td>
                                             <td><?php echo $row_users['s_matrics_num']?></td>
                                             <form method="POST" action="../view_intern_assessment_process.php">
-                                                <td><input type="number" name="code1" value="0"><br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+                                                <td><input type="number" name="code1" value="0"><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
                                             </form>
                                             <form method="POST" action="../view_intern_assessment_process.php">
-                                                <td><input type="number" name="code2" value="0"><br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+                                                <td><input type="number" name="code2" value="0"><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
                                             </form>
                                             <form method="POST" action="../view_intern_assessment_process.php">
-                                                <td><input type="number" name="code3" value="0"><br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary"></td>
+                                                <td><input type="number" name="code3" value="0"><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
                                             </form>
                                             <td>Noice</td>
                                         </tr>

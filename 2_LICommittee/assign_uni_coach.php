@@ -867,8 +867,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="button-demo">
-                                                        <input type="submit" name="submit" value="Update" class="btn btn-primary waves-effect">
-                                                        <input type="submit" name="submit" value="Delete" class="btn btn-danger waves-effect">
+                                                        <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Update" class="btn btn-primary waves-effect">
+                                                        <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Delete" class="btn btn-danger waves-effect">
                                                     </div>
                                                 </td>
                                             </form>

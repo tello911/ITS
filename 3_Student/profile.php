@@ -902,7 +902,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input name="submit" class="btn btn-primary waves-effect" type="submit" value="Submit">
+                                    <input name="submit" class="btn btn-primary waves-effect" type="submit" onclick="confirm('Are you sure?');" value="Submit">
                             </form>
 
                             </div>

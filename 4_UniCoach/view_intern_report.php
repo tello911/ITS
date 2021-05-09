@@ -857,8 +857,8 @@
                                                                     <form method="POST" action="../view_intern_report_process.php"> 
                                                                     <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_data['date']?>.pdf"><?php echo $row_data['date']?></a></p>
                                                                     <input type="hidden" name="id" value=<?php echo $row_data['id']?>>
-                                                                    <input type="submit" name="submit" value="Approve" class="btn btn-success waves">&nbsp&nbsp
-                                                                    <input type="submit" name="submit" value="Delete" class="btn btn-danger waves">
+                                                                    <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Approve" class="btn btn-success waves">&nbsp&nbsp
+                                                                    <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Delete" class="btn btn-danger waves">
                                                                     </form>
                                                                 </li>
                                                         <?php
