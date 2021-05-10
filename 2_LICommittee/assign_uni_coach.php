@@ -820,7 +820,7 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Phone</th>
+                                            <th>Matrics Number</th>
                                             <th>Email</th>
                                             <th>Uni Coach</th>
                                             <th>Action</th>
@@ -829,7 +829,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Phone</th>
+                                            <th>Matrics Number</th>
                                             <th>Email</th>
                                             <th>Uni Coach</th>
                                             <th>Action</th>
@@ -837,33 +837,36 @@
                                     </tfoot>
                                     <tbody>
                                             <?php
-                                            $query = "SELECT * FROM `user` WHERE u_role = 'student';";
+                                            $query = "SELECT * FROM `student`";
                                             $results = mysqli_query($conn,$query);
                                             while ($row_users = mysqli_fetch_array($results)) {
                                                 //output a row here
                                                 echo "<tr>";
                                                 echo '<form method="POST" action="../assign_uni_coach_process.php">';
-                                                echo "<td>".($row_users['u_name'])."</td>";
-                                                echo "<td>".($row_users['u_phone'])."</td>";
-                                                echo "<td>".($row_users['u_email'])."</td>";
-                                                echo '<input type="hidden" name="u_id" value="'.$row_users['u_id'].'">';
-                                                echo '<input type="hidden" name="u_name" value="'.$row_users['u_name'].'">';
-                                                echo '<input type="hidden" name="u_phone" value="'.$row_users['u_phone'].'">';
-                                                echo '<input type="hidden" name="u_email" value="'.$row_users['u_email'].'">';                                            
+                                                echo "<td>".($row_users['s_name'])."</td>";
+                                                echo "<td>".($row_users['s_matrics_num'])."</td>";
+                                                echo "<td>".($row_users['s_email'])."</td>";
+                                                echo '<input type="hidden" name="s_id" value="'.$row_users['s_id'].'">';
+                                                echo '<input type="hidden" name="s_name" value="'.$row_users['s_name'].'">';
+                                                echo '<input type="hidden" name="s_matrics_num" value="'.$row_users['s_matrics_num'].'">';
+                                                echo '<input type="hidden" name="s_email" value="'.$row_users['s_email'].'">';                                            
                                             ?>
                                                 <td>
                                                     <div>
-                                                        <input list="coach" id="uCoach" name="u_password" value=<?php echo $row_users['u_password']?> />
+                                                        <input list="coach" id="uCoach" name="u_coach" value=<?php echo $row_users['s_uni_coach']?> />
                                                         <datalist id="coach">
-                                                                    <option value="Chrome">
-                                                                    <option value="Firefox">
-                                                                    <option value="Internet Explorer">
-                                                                    <option value="Opera">
-                                                                    <option value="Safari">
-                                                                    <option value="Microsoft Edge">
+                                                        <?php
+                                                            $sql = "SELECT * FROM `user` WHERE u_role = 'uc';";
+                                                            $result = mysqli_query($conn,$sql);
+                                                            while ($row_data= mysqli_fetch_array($result)) {
+                                                            ?>
+                                                                <option value=<?php echo $row_data['u_email']?>><?php echo $row_data['u_name']?></option>
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </datalist>
                                                     </div>
-                                                    <p>Current Coach :   <?php echo $row_users['u_password']?></p>
+                                                    <p>Current Coach :   <?php echo $row_users['s_uni_coach']?></p>
                                                 </td>
                                                 <td>
                                                     <div class="button-demo">

@@ -802,8 +802,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+                    STUDENT PROGRESS
                 </h2>
             </div>
             <!-- Exportable Table -->
@@ -848,7 +847,7 @@
                                                 <td><? echo $row_users['s_email']?></td>
                                                 <td><? echo $row_users['s_matrics_num']?></td>
                                                 <td><? echo ($row_users['s_li_coach']) ? $row_users['s_li_coach']:'-'; ?></td>
-                                                <td><? echo ($row_users['s_uni_coach']) ? $row_users['s_li_coach']:'-';?></td>
+                                                <td><? echo ($row_users['s_uni_coach']) ? $row_users['s_uni_coach']:'-';?></td>
                                                 <td><? echo $row_users['s_course']?></td>
                                                 <td><? echo $row_users['no_app']?></td>
                                             </tr>

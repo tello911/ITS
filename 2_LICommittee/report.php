@@ -815,7 +815,7 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Phone</th>
+                                            <th>Email</th>
                                             <!--th>Email</th-->
                                             <th>No. Application</th>
                                             <th>Status</th>
@@ -828,7 +828,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Phone</th>
+                                            <th>Email</th>
                                             <!--th>Email</th-->
                                             <th>No. Application</th>
                                             <th>Status</th>
@@ -840,28 +840,31 @@
                                     </tfoot>
                                     <tbody>
                                             <?php
-                                            $query = "SELECT * FROM `user` WHERE u_role = 'student';";
+                                            $query = "SELECT * FROM `student`";
                                             $results = mysqli_query($conn,$query);
                                             while ($row_users = mysqli_fetch_array($results)) {
                                                 //output a row here
                                                 echo "<tr>";
-                                                echo '<form method="POST" action="../assign_uni_coach_process.php">';
-                                                echo "<td>".($row_users['u_name'])."</td>";
-                                                echo "<td>".($row_users['u_phone'])."</td>";
-                                                //echo "<td>".($row_users['u_email'])."</td>";
-                                                echo '<input type="hidden" name="u_id" value="'.$row_users['u_id'].'">';
-                                                echo '<input type="hidden" name="u_name" value="'.$row_users['u_name'].'">';
-                                                echo '<input type="hidden" name="u_phone" value="'.$row_users['u_phone'].'">';
-                                                echo '<input type="hidden" name="u_email" value="'.$row_users['u_email'].'">';                                            
+                                                echo '<form method="POST" action="../report_process.php">';
+                                                echo "<td>".($row_users['s_name'])."</td>";
+                                                echo "<td>".($row_users['s_email'])."</td>";
+                                                //echo "<td>".($row_users['s_email'])."</td>";
+                                                echo '<input type="hidden" name="s_id" value="'.$row_users['s_id'].'">';
+                                                echo '<input type="hidden" name="s_name" value="'.$row_users['s_name'].'">';
+                                                echo '<input type="hidden" name="s_matrics_num" value="'.$row_users['s_matrics_num'].'">';
+                                                echo '<input type="hidden" name="s_email" value="'.$row_users['s_email'].'">';                                            
                                             ?>
                                                 <td>
                                                     <div>
-                                                        <p>1</p>
+                                                        <p><?php echo $row_users['no_app']?></p>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                        <input list="coach" id="uCoach" name="u_password" pattern="In Progress|Accepted|Finished" value=<?php echo $row_users['u_password']?> />
-                                                        <datalist id="coach">
+                                                    <?php 
+                                                        echo "<input list='statuss' id='status' name='status' pattern='In Progress|Accepted|Finished' value=\"".$row_users['status']."\" />";
+                                                    ?>
+                                                        <br><p style='opacity:0'><?php echo $row_users['status']?>
+                                                        <datalist id="statuss">
                                                             <select name="status">
                                                                 <option value="In Progress">
                                                                 <option value="Accepted">
@@ -869,13 +872,13 @@
                                                             </select>
                                                         </datalist>
                                                 </td>
-                                                <td>0</td>
-                                                <td>0</td>
-                                                <td>0</td>
+                                                <td><?php echo $row_users['mark_1']?></td>
+                                                <td><?php echo $row_users['mark_2']?></td>
+                                                <td><?php echo $row_users['mark_3']?></td>
                                                 <td>
                                                     <div class="button-demo">
                                                         <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Update" class="btn btn-primary waves-effect">
-                                                        <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Delete" class="btn btn-danger waves-effect">
+                                                        <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Reset" class="btn btn-danger waves-effect">
                                                     </div>
                                                 </td>
                                             </form>
