@@ -1,9 +1,7 @@
 ﻿<?php
+    include 'session.php';
     include '../conn.php';
 ?>
-<!DOCTYPE html>
-<html>
-
 <!DOCTYPE html>
 <html>
 

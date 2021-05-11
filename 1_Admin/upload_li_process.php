@@ -1,6 +1,5 @@
 <?php
-    //print_r($_FILES);
-    //echo ini_get('upload_tmp_dir');
+    include 'session.php';
     $targetfolder = "testupload/";
 
     $targetfolder = $targetfolder.$_POST['description'].".".pathinfo($_FILES['file']['name'])['extension'];

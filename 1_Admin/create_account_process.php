@@ -1,4 +1,5 @@
 <?php
+    include 'session.php';
     include '../conn.php';
     $name = $email = $gender = $comment = $website = "";
 
