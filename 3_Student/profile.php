@@ -6,8 +6,7 @@
 
 <?php include 'head.php' ?>
 
-<body class="theme-red">
-    <?php include 'navbar.php'?>
+<?php include 'navbar.php'?>
 
     <!-- Create Account-->
     <section class="content">
