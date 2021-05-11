@@ -6,7 +6,6 @@
 
 <?php include 'head.php' ?>
 
-<body class="theme-red">
 <?php include 'navbar.php' ?>
 
 

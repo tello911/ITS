@@ -15,8 +15,7 @@
 
 <?php include 'head_dash.php' ?>
 
-<body class="theme-red">
-    <?php include 'navbar.php' ?>
+<?php include 'navbar.php' ?>
 
     <section class="content">
         <div class="container-fluid">
