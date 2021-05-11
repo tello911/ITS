@@ -1,4 +1,5 @@
 ﻿<?php
+    include 'session.php';
     include '../conn.php';
 ?>
 <!DOCTYPE html>
@@ -11,7 +12,6 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>MODALS</h2>
             </div>
             <!-- #END# Modal Size Example -->
             <!-- Material Design Colors -->
