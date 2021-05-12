@@ -6,12 +6,14 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
     }
-    $query = "SELECT `u_role` FROM `user` WHERE `u_email`='$email' AND `u_password`='$password'";
+    $query = "SELECT * FROM `user` WHERE `u_email`='$email' AND `u_password`='$password'";
     $results = mysqli_query($conn,$query);
     $rowcount=mysqli_num_rows($results);
 
     if($rowcount){
         while($pass = mysqli_fetch_array($results)){
+            $_SESSION['u_name'] = $pass['u_name'];
+            $_SESSION['u_email'] = $pass['u_email'];
             //CHECK ADMIN
             if($pass['u_role'] == 'admin'){
                 $_SESSION['u_id'] = $email;
