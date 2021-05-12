@@ -13,7 +13,7 @@
     $sql = "INSERT INTO User VALUES(DEFAULT,'".$name."','".$password."','".$phone."','".$email."','".$role."');";
 
     if (mysqli_query($conn, $sql)) {
-        $sql = "INSERT INTO log_info VALUES('An account has been created by ','".$date."');";
+        $sql = "INSERT INTO log_info VALUES('An account has been created by ".$_SESSION['u_name']."','".$date."');";
         mysqli_query($conn,$sql);
         echo "<script>window.location.href='create_account.php';alert('An account for a ".$role." created successfully!')</script>";
       } else {
