@@ -293,6 +293,12 @@
                             <span>Log System</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="../create_account_student.php">
+                            <i class="material-icons">school</i>
+                            <span>Create Student</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- #Menu -->

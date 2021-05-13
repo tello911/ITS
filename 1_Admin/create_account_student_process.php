@@ -2,23 +2,21 @@
     include 'session.php';
     include '../conn.php';
     $name = $email = $gender = $comment = $website = "";
-
     if (isset($_POST['submit'])) {
         $name = test_input($_POST['name']);
-        $password = test_input($_POST['password']);
+        $matnum = test_input($_POST['matnum']);
         $email = test_input($_POST['email']);
-        $phone = test_input($_POST['phone']);
-        $role = test_input($_POST['role']);
+        $course = test_input($_POST['course']);
     }
-    $sql = "INSERT INTO `user` VALUES(DEFAULT,'".$name."','".$password."','".$phone."','".$email."','".$role."');";
+    $sql = "INSERT INTO `student` (`s_id`, `s_name`, `s_email`, `s_matrics_num`, `s_li_coach`, `s_uni_coach`, `s_picture`, `s_course`, `no_app`, `mark_1`, `mark_2`, `mark_3`, `status`) VALUES (NULL, '$name', '$email', '$matnum', NULL, NULL, NULL, '$course', '0', '0', '0', '0', 'In Progress')";
 
     if (mysqli_query($conn, $sql)) {
-        $sql = "INSERT INTO log_info VALUES('An account has been created by ".$_SESSION['u_name']."','".$date."');";
+        $sql = "INSERT INTO log_info VALUES('A STUDENT account has been created by ".$_SESSION['u_name']."','".$date."');";
         mysqli_query($conn,$sql);
-        echo "<script>window.location.href='create_account.php';alert('An account for a ".$role." created successfully!')</script>";
+        echo "<script>window.location.href='create_account.php';alert('An STUDENT account has been created')</script>";
       } else {
-        echo $sql;
-        //echo "<script>window.location.href='create_account.php';alert('Your SQL query have error ')</script>";
+        // echo $sql;
+        echo "<script>window.location.href='create_account.php';alert('Your SQL query have error ')</script>";
       }
       
       mysqli_close($conn);

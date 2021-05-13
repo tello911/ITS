@@ -20,7 +20,8 @@
                                 <h2>Update Account</h2>
                             </div>
                             <?php
-                                $query = "SELECT * FROM `student` LEFT JOIN `user` ON `student`.`s_email` = `user`.`u_email` WHERE `s_email` = 'lol@gmail.com';";
+                                $email = $_SESSION['u_email'];
+                                $query = "SELECT * FROM `student` LEFT JOIN `user` ON `student`.`s_email` = `user`.`u_email` WHERE `s_email` = '$email';";
                                 $results = mysqli_query($conn, $query);
                                 $row_users = mysqli_fetch_array($results);
                             ?>
