@@ -45,7 +45,7 @@
                                     </tfoot>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='hazque99@gmail.com' AND `user`.`u_role`='uc'";
+                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='".$_SESSION['u_email']."' AND `user`.`u_role`='uc'";
                                             $results = mysqli_query($conn, $query);
                                             while($row_users = mysqli_fetch_array($results)){
                                         ?>
@@ -57,7 +57,11 @@
                                             <td>
                                                 <details style="cursor:pointer;">
                                                     <summary>Resume</summary>
+                                                    <?php if(file_exists("../3_Student/resume/".$row_users['s_matrics_num'].".pdf")){ ?>
                                                     <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_users['s_matrics_num']?>.pdf">Resume</a></p>
+                                                    <?php }else{ ?>
+                                                    <p>Student have not uploaded the resume yet</p>
+                                                    <?php } ?>
                                                 </details>
                                             </td>
                                         </tr>

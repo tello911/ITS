@@ -50,7 +50,7 @@
                                     </tfoot>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='hazque99@gmail.com' AND `user`.`u_role`='uc'";
+                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='".$_SESSION['u_email']."' AND `user`.`u_role`='uc'";
                                             $results = mysqli_query($conn, $query);
                                             while($row_users = mysqli_fetch_array($results)){
                                         ?>
@@ -59,13 +59,10 @@
                                             <td><?php echo $row_users['s_email']?></td>
                                             <td><?php echo $row_users['s_matrics_num']?></td>
                                             <form method="POST" action="../view_intern_assessment_process.php">
-                                                <td><input type="number" name="code1" value="0"><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
-                                            </form>
-                                            <form method="POST" action="../view_intern_assessment_process.php">
-                                                <td><input type="number" name="code2" value="0"><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
-                                            </form>
-                                            <form method="POST" action="../view_intern_assessment_process.php">
-                                                <td><input type="number" name="code3" value="0"><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
+                                                <input type="hidden" name="matnum" value=<?php echo $row_users['s_matrics_num']?> />
+                                                <td><input type="number" name="code[]" value=<?php echo $row_users['mark_1']?>><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
+                                                <td><input type="number" name="code[]" value=<?php echo $row_users['mark_2']?>><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
+                                                <td><input type="number" name="code[]" value=<?php echo $row_users['mark_3']?>><br><br><input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Submit" class="btn btn-primary"></td>
                                             </form>
                                             <td>Noice</td>
                                         </tr>

@@ -47,7 +47,7 @@
                                     <tbody>
                                         <tr>
                                         <?php
-                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='hazque99@gmail.com' AND `user`.`u_role`='uc'";
+                                            $query = "SELECT * FROM `student` INNER JOIN `user` ON `student`.`s_uni_coach`=`user`.`u_email` WHERE `s_uni_coach`='".$_SESSION['u_email']."' AND `user`.`u_role`='uc'";
                                             $results = mysqli_query($conn, $query);
                                             while($row_users = mysqli_fetch_array($results)){
                                         ?>
