@@ -60,16 +60,16 @@
                                                     <summary>Click here to see all the reports from the intern</summary>
                                                     <ul>
                                                         <?php
-                                                            $query = "SELECT * FROM `logbook_student` WHERE `email` = '".$row_users['s_email']."'";
+                                                            $query = "SELECT * FROM `logbook_student` INNER JOIN `student` ON `logbook_student`.`email` = `student`.`s_email` WHERE `email` = '".$row_users['s_email']."'";
                                                             $result = mysqli_query($conn, $query);
                                                             while($row_data = mysqli_fetch_array($result)){
                                                         ?>
                                                                 <li>
                                                                     <form method="POST" action="../view_intern_report_process.php"> 
-                                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_data['date']?>.pdf"><?php echo $row_data['date']?></a></p>
+                                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_data['s_matrics_num']."-".$row_data['date']?>.pdf"><?php echo $row_data['date']?></a></p>
                                                                     <input type="hidden" name="id" value=<?php echo $row_data['id']?>>
                                                                     <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Approve" class="btn btn-success waves">&nbsp&nbsp
-                                                                    <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Delete" class="btn btn-danger waves">
+                                                                    <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Reject" class="btn btn-danger waves">
                                                                     </form>
                                                                 </li>
                                                         <?php
