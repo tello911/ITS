@@ -288,7 +288,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../view_intern.php">
+                        <a href="../view_intern_assessment.php">
                             <i class="material-icons">grade</i>
                             <span>View Intern Assessment</span>
                         </a>

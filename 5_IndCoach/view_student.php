@@ -56,9 +56,13 @@
                                             <td><?php echo $row_users['s_matrics_num']?></td>
                                             <td><?php echo $row_users['s_course']?></td>
                                             <td>
-                                                <details style="cursor:pointer;">
+                                            <details style="cursor:pointer;">
                                                     <summary>Resume</summary>
+                                                    <?php if(file_exists("../3_Student/resume/".$row_users['s_matrics_num'].".pdf")){ ?>
                                                     <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/resume/<?php echo $row_users['s_matrics_num']?>.pdf">Resume</a></p>
+                                                    <?php }else{ ?>
+                                                    <p>Student have not uploaded the resume yet</p>
+                                                    <?php } ?>
                                                 </details>
                                             </td>
                                         </tr>
