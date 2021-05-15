@@ -53,7 +53,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 35px !important">Firstname</th>
-                                    <th style="width: 35px !important">Lastname</th>
+                                    <th style="width: 35px !important">Title</th>
                                     <th style="width: 50px !important">Content</th>
                                     <th style="width: 35px !important">Industry</th>
                                     <th style="width: 35px !important">University</th>
@@ -61,7 +61,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $query = "SELECT * FROM `logbook_student` WHERE email = 'lol@gmail.com'";
+                                    $query = "SELECT * FROM `logbook_student` WHERE email = '".$_SESSION['u_email']."'";
                                     $results = mysqli_query($conn, $query);
                                     while($row_users = mysqli_fetch_array($results)){
                                 ?>

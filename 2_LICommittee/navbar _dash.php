@@ -243,7 +243,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../../images/user.png" width="48" height="48" alt="User" />
+                    <img src="../ITS/images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['u_name'] ?></div>
@@ -253,7 +253,7 @@
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="../../logout.php"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="../ITS/logout.php"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -264,37 +264,37 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="../index.php">
+                        <a href="2_LICommittee/index.php">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard.php">
+                        <a href="2_LICommittee/dashboard.php">
                             <i class="material-icons">insert_chart</i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../assign_uni_coach.php">
+                        <a href="2_LICommittee/assign_uni_coach.php">
                             <i class="material-icons">assignment_ind</i>
                             <span>Assign Uni Coach</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../report.php">
+                        <a href="2_LICommittee/report.php">
                             <i class="material-icons">list</i>
                             <span>Report</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../student_progress.php">
+                        <a href="2_LICommittee/student_progress.php">
                             <i class="material-icons">school</i>
                             <span>Student Progress</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../send_email.php">
+                        <a href="2_LICommittee/send_email.php">
                             <i class="material-icons">send</i>
                             <span>Send Email</span>
                         </a>

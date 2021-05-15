@@ -16,7 +16,7 @@
 
 <?php include 'head_dash.php' ?>
 
-<?php include 'navbar.php' ?>
+<?php include 'navbar _dash.php' ?>
 
     <section class="content">
         <div class="container-fluid">

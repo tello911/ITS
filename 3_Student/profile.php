@@ -52,11 +52,12 @@
                                             </p>
                                             <div class="input-group">
                                                 <div class="form-line">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">lock</i>
+                                                    </span>
                                                     <input type="password" name="password" class="form-control" placeholder="password" value=<?php echo $row_users['u_password']?>>
                                                 </div>
-                                                <span class="input-group-addon">
-                                                    <i class="material-icons">lock</i>
-                                                </span>
+                                                
                                             </div>
                                         </div>
                                         <div class="row clearfix col-md-12">

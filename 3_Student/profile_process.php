@@ -9,9 +9,10 @@
         $mat_num = $_POST['mat_num'];
     }
 
-    $query = "UPDATE student SET s_name = '$name', s_password = '$password', s_email = '$email', s_phone = '$phone' WHERE s_email = '$email';";
+    $query = "UPDATE `user` SET `u_phone` = '$phone',`u_password` = '$password' WHERE  `user`.`u_email` = '$email';";
     $results = mysqli_query($conn, $query);
-    if(isset($_FILES['file'])){
+
+    if(isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE){
         $targetfolder = "testupload/";
         $targetfolder = $targetfolder.$mat_num.".".pathinfo($_FILES['file']['name'])['extension'];
 
