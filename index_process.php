@@ -46,6 +46,6 @@
             }
         }
     }else{
-        echo "<script>alert('Please recheck your email and password');</script>";
+        echo "<script>window.location.href='in.html';alert('Please recheck your email and password');</script>";
     }
 ?>

@@ -51,6 +51,11 @@
                                     </tfoot>
                                     <tbody>
                                         <?php
+                                            $email = $_SESSION['u_email'];
+                                            $sql = "SELECT * FROM `student` WHERE `s_email` = '$email'";
+                                            $lists = mysqli_query($conn, $sql);
+                                            $row_data = mysqli_fetch_array($lists);
+
                                             $query = "SELECT * FROM `company`;";
                                             $results = mysqli_query($conn,$query);
                                             while ($row_users = mysqli_fetch_array($results)) {
@@ -62,9 +67,16 @@
                                                     <td><?php echo $row_users['picname'];?></td>
                                                     <td><?php echo $row_users['contact'];?></td>
                                                     <td><?php echo $row_users['email'];?></td>
+                                                    <input type="hidden" name="i_email" value=<?php echo $row_users['email'];?> />
                                                     <td>
                                                         <div class="button-demo">
-                                                            <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Apply" class="btn btn-primary waves-effect">
+                                                            <?php
+                                                                if($row_data['s_application']==0){
+                                                            ?>
+                                                                <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Apply" class="btn btn-primary waves-effect">
+                                                            <?php
+                                                                }
+                                                            ?>
                                                         </div>
                                                     </td>
                                                     </form>

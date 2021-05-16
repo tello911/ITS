@@ -1,4 +1,5 @@
 ﻿<?php
+    include 'session.php';
     include '../conn.php';
     $query = "SELECT COUNT(u_name) as 'number',u_role FROM `user` WHERE 1 GROUP BY u_role;";
     $results = mysqli_query($conn,$query);
@@ -14,7 +15,6 @@
 <html>
 
 <?php include 'head_dash.php' ?>
-
 <?php include 'navbar _dash.php' ?>
 
     <section class="content">

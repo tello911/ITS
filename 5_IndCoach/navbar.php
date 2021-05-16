@@ -1,4 +1,4 @@
-<body class="theme-blue-grey"$_SESSION['u_email']<?php echo $_SESSION['u_email'] ?>
+<body class="theme-blue-grey">
 <div>
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -267,6 +267,12 @@
                         <a href="../index.php">
                             <i class="material-icons">home</i>
                             <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../approve_student.php">
+                            <i class="material-icons">verified_user</i>
+                            <span>Approve Student</span>
                         </a>
                     </li>
                     <li>

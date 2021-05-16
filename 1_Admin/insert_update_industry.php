@@ -155,7 +155,7 @@
                                         <div class="col-md-4">
                                             <p>Email</p>
                                             <?php
-                                                    $query = "SELECT u_email FROM `user` WHERE `u_role` = 'ic'";
+                                                    $query = "SELECT `u_email` FROM `user` WHERE `u_role` = 'ic'";
                                                     $results = mysqli_query($conn, $query);
                                                     $pattern = ""; 
                                                     while($row_data = mysqli_fetch_array($results)){

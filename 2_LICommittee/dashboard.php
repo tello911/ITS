@@ -15,7 +15,6 @@
 <html>
 
 <?php include 'head_dash.php' ?>
-
 <?php include 'navbar _dash.php' ?>
 
     <section class="content">

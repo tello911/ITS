@@ -288,6 +288,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../upload_resume.php">
+                            <i class="material-icons">chrome_reader_mode</i>
+                            <span>Upload Resume</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../logbook.php">
                             <i class="material-icons">content_paste</i>
                             <span>Logbook</span>
