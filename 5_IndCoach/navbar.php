@@ -300,6 +300,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../view_intern_logbook.php">
+                            <i class="material-icons">book</i>
+                            <span>View Intern Logbook</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../exit_survey.php">
                             <i class="material-icons">exit_to_app</i>
                             <span>Exit Survey</span>

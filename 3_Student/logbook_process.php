@@ -11,9 +11,9 @@
     if (mysqli_query($conn, $query)) {
         // $sql = "INSERT INTO log_info VALUES('LI info has been inserted by ','".$date."');
         // mysqli_query($conn,$sql);
-        echo "<script>window.location.href='logbook.html';alert('Your logbook has been updated for date ".$date."')</script>";
+        echo "<script>window.location.href='logbook.php';alert('Your logbook has been updated for date ".$date."')</script>";
     } else {
-        echo "<script>window.location.href='logbook.html';alert('Your SQL query have error ')</script>";
+        echo "<script>window.location.href='logbook.php';alert('Your SQL query have error ')</script>";
     }
     mysqli_close($conn);
 ?>

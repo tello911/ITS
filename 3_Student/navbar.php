@@ -294,6 +294,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../upload_technical.php">
+                            <i class="material-icons">class</i>
+                            <span>Upload Technical</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../logbook.php">
                             <i class="material-icons">content_paste</i>
                             <span>Logbook</span>

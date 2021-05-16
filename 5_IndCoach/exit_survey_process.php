@@ -12,6 +12,6 @@
     $query = "INSERT INTO `survey` (`id`, `name`, `contact`, `industry`, `comment`) VALUES (NULL, '$name', '$contact', '$industry', '$comment');";
     $results = mysqli_query($conn, $query);
 
-    echo "<script>alert('Your info will being updated');window.location.href='exit_survey.html';</script>";
+    echo "<script>alert('Your info will being updated');window.location.href='exit_survey.php';</script>";
 
 ?>
