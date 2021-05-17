@@ -1,11 +1,11 @@
 ﻿<?php
     include 'session.php';
+    include '../conn.php';
 ?>
 <!DOCTYPE html>
 <html>
 
 <?php include 'head.php' ?>
-
    <?php include 'navbar.php' ?>
 
     <section class="content">
@@ -19,13 +19,12 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            UPLOAD FILES
+                            UPLOAD LI INFO
                         </div>
                         <div class="body">
                             <form action="../upload_li_process.php" id="frmFileUpload" method="post" enctype='multipart/form-data'>
                                 <div class="dz-message">
-                                    <label>LI PROCESS: DESCRIPTION (will be set as the file name)</label><br><br>
-                                    <input type="text" name="description">
+                                    <input type="text" name="li_info" value="" placeholder="File Name">
                                 </div>
                                 <div class="fallback">
                                     <br><br>

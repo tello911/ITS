@@ -53,7 +53,7 @@
                                                 <td>
                                                     <details>
                                                         <summary style="cursor:pointer;">Click here to download file</summary>
-                                                        <a href="../../uploads/<?echo $row_users['file']?>" download>Download File</a>
+                                                        <a href="../../1_Admin/<?php echo $row_users['file']?>" download>Download File</a>
                                                     </details>
                                                 </td>
                                             </tr>
@@ -97,7 +97,7 @@
                                 ?>
                                         <div class="item<?php echo ($i++==0)?' active':''; ?> col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <!--mg src="../../images/image-gallery/Black.png"-->
-                                            <iframe class="col-lg-12 col-md-12 col-sm-12 col-xs-12" src="../../uploads/<?echo $row_users['file']?>" style="width: 900px;height: 1000px;"></iframe>
+                                            <iframe class="col-lg-12 col-md-12 col-sm-12 col-xs-12" src="../../1_Admin/<?php echo $row_users['file']?>" style="width: 900px;height: 1000px;"></iframe>
                                             <div class="carousel-caption"></div>
                                             <?php echo html_entity_decode($row_users['info']); ?>
                                         </div>
@@ -106,11 +106,11 @@
                                 ?>
                             </div>
                             <!-- Controls -->
-                            <a class="left carousel-control" href="../li_info.php#carousel-example-generic_2" role="button" data-slide="prev">
+                            <a class="left carousel-control" href="../index.php#carousel-example-generic_2" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="right carousel-control" href="../li_info.php#carousel-example-generic_2" role="button" data-slide="next">
+                            <a class="right carousel-control" href="../index.php#carousel-example-generic_2" role="button" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
