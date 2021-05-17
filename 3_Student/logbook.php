@@ -47,9 +47,8 @@
             <div class="card col-lg-12">
                 <div class="body">
                     <div class="container">
-                        <h2>Hover Rows</h2>
-                        <p>The .table-hover class enables a hover state on table rows:</p>
-                        <table class="table table-hover col-xl-9 col-lg-12">
+                        <h2>Logbook Status</h2>
+                        <table class="table table-hover col-xl-9 col-lg-9">
                             <thead>
                                 <tr>
                                     <th style="width: 35px !important">Firstname</th>
@@ -57,6 +56,7 @@
                                     <th style="width: 50px !important">Content</th>
                                     <th style="width: 35px !important">Industry</th>
                                     <th style="width: 35px !important">University</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,11 +66,17 @@
                                     while($row_users = mysqli_fetch_array($results)){
                                 ?>
                                 <tr>
+                                    <form method="POST" action="../logbook_process_2.php">
                                     <td style="width:  35px !important"><?php echo $row_users['date']?></td>
                                     <td style="width:  35px !important"><?php echo $row_users['title']?></td>
-                                    <td style="width:  50px !important"><?php echo $row_users['content']?></td>
+                                    <td style="width:  50px !important"><?php echo html_entity_decode($row_users['content'])?></td>
                                     <td style="width:  35px !important"><?php echo ($row_users['approval_industry']==0)?'No':'Yes'; ?></td>
                                     <td style="width:  35px !important"><?php echo ($row_users['approval_uni']==0)?'No':'Yes'; ?></td>
+                                    <td>
+                                        <input type="hidden" name="id" value=<?php echo $row_users['id']?> />
+                                        <input type="submit" onclick="confirm('Are you sure you want to delete the logbook?');" name="submit" class="btn btn-danger" value="Delete"/>
+                                    </td>
+                                    </form>
                                 </tr>
                                 <?php
                                     }

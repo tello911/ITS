@@ -21,7 +21,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            UPLOAD RESUME
+                            UPLOAD TECHNICAL REPORT
                         </div>
                         <div class="body">
                             <form action="../upload_technical_process.php" id="frmFileUpload" method="post" enctype='multipart/form-data'>
