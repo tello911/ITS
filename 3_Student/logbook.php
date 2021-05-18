@@ -24,13 +24,13 @@
                                 <div class="form-group row">
                                     <label for="example-date-input" class="col-2 col-form-label">Date</label>
                                     <div class="col-10">
-                                        <input class="form-control" id="txtTo" type="date" value="2021-05-05" id="example-date-input" name="date">
+                                        <input class="form-control" id="txtTo" type="date" value=<?php echo date('Y-m-d')?> id="example-date-input" name="date">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-2 col-form-label">Title</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" value="Put your logbook title here" id="example-text-input" name="title">
+                                        <input class="form-control" type="text" placeholder="Put your logbook title here" id="example-text-input" name="title">
                                     </div>
                                 </div>
                                 <textarea id="ckeditor" name="logbook">

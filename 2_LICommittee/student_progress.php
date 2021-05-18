@@ -111,6 +111,17 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+    <script>
+        //Exportable table
+        $('.js-exportable').DataTable({
+            dom: 'Bfrtip',
+            responsive: true,
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+        });
+
+    </script>
 </body>
 
 </html>

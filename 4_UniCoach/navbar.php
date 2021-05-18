@@ -294,6 +294,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../intern_assessment.php">
+                            <i class="material-icons">description</i>
+                            <span>Intern Assessment</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../exit_survey.php">
                             <i class="material-icons">exit_to_app</i>
                             <span>Exit Survey</span>

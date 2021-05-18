@@ -155,7 +155,7 @@
                                         <div class="col-md-4">
                                             <p>Email</p>
                                             <?php
-                                                    $query = "SELECT `u_email` FROM `user` WHERE `u_role` = 'ic'";
+                                                    $query = "SELECT * FROM `user` LEFT JOIN `company` ON `user`.`u_email` = `company`.`email` WHERE `user`.`u_role` = 'ic' AND `company`.`email` IS NULL";
                                                     $results = mysqli_query($conn, $query);
                                                     $pattern = ""; 
                                                     while($row_data = mysqli_fetch_array($results)){
@@ -163,7 +163,7 @@
                                                     }
                                                     $pattern = rtrim($pattern, "|");
                                             ?>
-                                            <input list="emails_" name="email" id="email" pattern=<?php echo $pattern; ?> title="Please make sure you've already registered the email">
+                                            <input list="emails_" name="email" id="email" title="Please make sure you've already registered the e-mail" pattern=<?php echo $pattern; ?> >
                                             <datalist id="emails_">
                                                 <?php
                                                     $query = "SELECT u_email FROM `user` WHERE `u_role` = 'ic'";
