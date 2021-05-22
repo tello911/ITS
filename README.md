@@ -2,11 +2,11 @@
 0. Unzip the zip file (Good job, you've already done it).
 1. Import database using its(1).sql that contains together beside ITS folder and unzipper.php
 2. Check file conn.php in the ITS directory to set up the database according to the user's configuration.
-	2.1: By default, this is the configuration
-	       $servername = "localhost"; //Can be changed
-	       $username = "root";  //can be changed
-	       $password = "mysql"; //can be changed
-	       $DBname = "its"; //follow db name in its(1).sql or change the name at there
+	2.1: By default, this is the configuration <br>
+	       &emsp;&emsp;$servername = "localhost"; //Can be changed<br>
+	       &emsp;&emsp;$username = "root";  //can be changed<br>
+	       &emsp;&emsp;$password = "mysql"; //can be changed<br>
+	       &emsp;&emsp;$DBname = "its"; //follow db name in its(1).sql or change the name at there<br>
 3. Check internet connection, since some of the file requires internet connection to run (Mostly don't, just for precaution)
 4. Check credential in table `user` in `its` database
 5. Make sure you're in correct directory before proceed to test the system.
@@ -14,7 +14,7 @@ No security effort is applied. So, kindly no SQL injection, XSS attack.
 Thank you!!
 ---------------------------------------------------------------
 -----------------------------------------------------------------
-CREDENTIAL
+CREDENTIAL <br>
 `admin` = admin <br>
 `li_comm` = li committee <br>
 `student` = student <br>
@@ -82,7 +82,7 @@ username:amirun1999@lol.my	password:admin
 Not Approved Yet Industry Coach:
 username:first@gmail.com		password:admin
 
-1.LI Info
+1. LI Info
 Download LI Info
 and play with zooming scale when check the pdf viewer if not shown anything
 
