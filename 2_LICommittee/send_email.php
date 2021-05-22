@@ -18,9 +18,15 @@
                         <input type="text" name="subject" placeholder="Subject">
                         <br><br><br>
                         <select class="form-control show-tick"  name="email[]"multiple>
-                            <option value="hazique99@gmail.com">Mustard</option>
-                            <option value="kassim@gmail.com">Ketchup</option>
-                            <option value="baba@gmail.com">Relish</option>
+                            <?php
+                                $query = "SELECT * FROM `student`;";
+                                $results = mysqli_query($conn, $query);
+                                while($row_users = mysqli_fetch_array($results)){
+                            ?>
+                            <option value=<?php echo $row_users['s_email'];?>><?php echo $row_users['s_name'];?></option>
+                            <?php
+                                }
+                            ?>
                         </select>
                         <br><br><br>
                         <input type="submit" name="submit" value="submit" />

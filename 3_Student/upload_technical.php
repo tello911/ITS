@@ -49,6 +49,59 @@
             <!-- #END# File Upload | Drag & Drop OR With Click & Choose -->
         </div>
     </section>
+    <section class="content ">
+        <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="block-header">
+
+            </div>
+
+            <!-- File Upload | Drag & Drop OR With Click & Choose -->
+            <div class="row clearfix">
+                <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            TECHNICAL REPORT STATUS
+                        </div>
+                        <div class="body">
+                            <div class="container col-lg-10 col-md-10 col-sm-12 col-xs-12">      
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Report</th>
+                                                <th>Approval Industry</th>
+                                                <th>Approval University</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $query = "SELECT * FROM `technical` INNER JOIN `student` ON `technical`.`email` = `student`.`s_matrics_num` WHERE `student`.`s_email` = '".$_SESSION['u_email']."'";
+                                            $results = mysqli_query($conn, $query);
+                                            while($row_users = mysqli_fetch_array($results)){
+                                            ?>
+                                            <tr>
+                                                <form method="post" action="../upload_technical_process2.php">
+                                                    <td><?php echo $row_users['date'] ?></td>
+                                                    <td><a href=<?php echo "../".$row_users['path'];?>><?php echo $row_users['report'] ?></a></td>
+                                                    <td><?php echo $row_users['approval_industry'] ?></td>
+                                                    <td><?php echo $row_users['approval_uni'] ?></td>
+                                                    <input type="hidden" value=<?php echo $row_users['id']?> name="id"/>
+                                                    <td><input type="submit" onclick="confirm('Are you sure?');"name="submit" class="btn btn-danger waves-effect" value="Delete"></td>
+                                                </form>
+                                            </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
 

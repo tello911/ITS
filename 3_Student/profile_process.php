@@ -12,7 +12,7 @@
     $query = "UPDATE `user` SET `u_phone` = '$phone',`u_password` = '$password' WHERE  `user`.`u_email` = '$email';";
     $results = mysqli_query($conn, $query);
 
-    if(isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE){
+    if(isset($_FILES['file']) && $_FILES['file']['error'] == 0){
         $targetfolder = "testupload/";
         $targetfolder = $targetfolder.$mat_num.".".pathinfo($_FILES['file']['name'])['extension'];
 
@@ -30,7 +30,7 @@
             echo "<script>window.location.href='profile.php';alert('Only JPEG is permitted');</script>";
         }
     }
-
-    echo "<script>window.location.href='profile.php';alert('Your info is been updated');</script>";
+    // print_r($_FILES);
+    echo "<script>window.location.href='profile.php';alert('Your file have error');</script>";
 
 ?>

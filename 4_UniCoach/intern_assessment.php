@@ -1,4 +1,7 @@
-﻿<?php include 'session.php' ?>
+﻿<?php 
+    include 'session.php';
+    include '../conn.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -109,8 +112,34 @@
                                             <h5>Email Address: </h5><input type="email" name="email" value="" /><br><br>
                                             <label>Industry Name:</label><input type="text" name="company" value="" /><br/>
                                             <label>Ind Coach Name:</label><input type="text" name="ic" value="" /><br/>
-                                            <label>Uni Coach Name:</label><input type="text" name="uc" value="" /><br/>
-                                            <label>Student Name:</label><input type="text" name="student" value="" /><br/>
+                                            <label for="uniCoach">University Coach Name</label>
+                                            <input name="uniCoach" class="form-control" list="uniCoachList" id="uniCoach" placeholder="Type to search..."/>
+                                            <datalist id="uniCoachList">
+                                                <?php
+                                                    $query = "SELECT * FROM `user` WHERE `u_role` = 'uc'";
+                                                    $results = mysqli_query($conn, $query);
+                                                    while($row_users = mysqli_fetch_array($results)){
+                                                ?>
+                                                <option value=<?php echo $row_users['u_email']?>><?php echo $row_users['u_name']?></option>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </datalist>
+                                            <br/>
+                                            <label for="student">Student Name</label>
+                                            <input name="student" class="form-control" list="studentList" id="student" placeholder="Type to search...">
+                                            <datalist id="studentList">
+                                                <?php
+                                                    $query = "SELECT * FROM `student`";
+                                                    $results = mysqli_query($conn, $query);
+                                                    while($row_users = mysqli_fetch_array($results)){
+                                                ?>
+                                                <option value=<?php echo $row_users['s_matrics_num']?>><?php echo $row_users['s_name']?></option>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </datalist>
+                                            <br/>
                                         </div>
                                     </div>
                                     <div class="tab">
@@ -290,7 +319,7 @@
                                             <br>
                                             <br>
                                             <label for="commentb">Comment</label><br>
-                                            <textarea id="commentb" name="commentb" rows="4" cols="50">Any comment if necessary..</textarea>
+                                            <textarea id="commentb" name="commentb" rows="4" cols="50" placeholder="Any comment if necessary.." ></textarea>
                                         </div>
                                     </div>
                                     <div class="tab">
@@ -533,7 +562,7 @@
                                             <br>
                                             <br>
                                             <label for="commentc">Comment</label><br>
-                                            <textarea id="commentc" name="commentc" rows="4" cols="50">Any comment if necessary..</textarea>
+                                            <textarea id="commentc" name="commentc" rows="4" cols="50" placeholder="Any comment if necessary.." ></textarea>
                                         </div>
 
                                     </div>
@@ -714,7 +743,7 @@
                                             <br>
                                             <br>
                                             <label for="commentd">Comment</label><br>
-                                            <textarea id="commentd" name="commentd" rows="4" cols="50">Any comment if necessary..</textarea>
+                                            <textarea id="commentd" name="commentd" rows="4" cols="50" placeholder="Any comment if necessary.." ></textarea>
                                         </div>
                                     </div>
                                     <div style="overflow:auto;">

@@ -66,8 +66,18 @@
                                                         ?>
                                                                 <li>
                                                                     <form method="POST" action="../view_intern_report_process.php"> 
-                                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/technical/<?php echo $row_data['report']?>.pdf"><?php echo $row_data['report']?></a>
-                                                                    <?php echo ($row_data['approval_industry'] == 1)?"(Approved /)":"(Rejected X)";?></p>
+                                                                    <p><a target="_blank" rel="noopener noreferrer" href="../../3_Student/<?php echo $row_data['path'];?>.""><?php echo $row_data['report']?></a>
+                                                                    <?php 
+                                                                        if($row_data['approval_industry'] == 1){
+                                                                            echo "Approved /";
+                                                                        }else if($row_data['approval_industry'] == -1){
+                                                                            echo "Rejected X";
+                                                                        }else{
+                                                                            echo "Not check yet";
+                                                                        }
+                                                                    ?>
+                                                                    
+                                                                    </p>
                                                                     <input type="hidden" name="id" value=<?php echo $row_data['id']?>>
                                                                     <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Approve" class="btn btn-success waves">&nbsp&nbsp
                                                                     <input type="submit" onclick="confirm('Are you sure?');" name="submit" value="Reject" class="btn btn-danger waves">

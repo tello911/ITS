@@ -7,7 +7,7 @@
         $title = $_POST['title'];
     }
 
-    $query = "INSERT INTO `logbook_student` (`id`, `date`, `title`, `content`, `email`, `approval_industry`, `approval_uni`) VALUES (NULL, '".$date."', '".$title."', '".$info."', 'lol@gmail.com', '0', '0')";
+    $query = "INSERT INTO `logbook_student` (`id`, `date`, `title`, `content`, `email`, `approval_industry`, `approval_uni`) VALUES (NULL, '".$date."', '".$title."', '".$info."', '".$_SESSION['u_email']."', '0', '0')";
     if (mysqli_query($conn, $query)) {
         // $sql = "INSERT INTO log_info VALUES('LI info has been inserted by ','".$date."');
         // mysqli_query($conn,$sql);

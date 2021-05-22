@@ -67,7 +67,15 @@
                                             <input type="submit" name="submit" value="Reject" class="btn btn-danger"><br><br>
                                             <details style="cursor:pointer;">
                                                 <summary class="btn btn-info">Status</summary>
-                                                <?php echo ($row_users['approval_industry']==1)?"Approved":"Rejected/ Not Checked";?>
+                                                <?php  if($row_users['approval_industry']==1){
+                                                        echo "Approved";
+                                                    }else if($row_users['approval_industry']==-1){
+                                                        echo "Rejected";
+                                                    }else{
+                                                        echo "Not Checked";
+                                                    }
+                                                    
+                                                ?>
                                             </details>
                                         </td>
                                         </form>

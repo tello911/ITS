@@ -294,6 +294,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../view_intern_logbook.php">
+                            <i class="material-icons">book</i>
+                            <span>View Intern Logbook</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../intern_assessment.php">
                             <i class="material-icons">description</i>
                             <span>Intern Assessment</span>

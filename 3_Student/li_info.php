@@ -53,7 +53,7 @@
                                                 <td>
                                                     <details>
                                                         <summary style="cursor:pointer;">Click here to download file</summary>
-                                                        <a href="../../1_Admin/<?php echo $row_users['file']?>" download>Download File</a>
+                                                        <a class="btn btn-primary"href="../../1_Admin/<?php echo $row_users['file']?>" download>Download File</a>
                                                     </details>
                                                 </td>
                                             </tr>

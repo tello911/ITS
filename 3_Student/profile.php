@@ -31,7 +31,7 @@
                                         <div class="col-md-2">
                                             <img src="../testupload/<?php echo $row_users['s_matrics_num']?>.JPG" alt="Student Picture" width="100" height="100" style="border-radius: 50%;">
                                             <input type="file" name="file" multiple>
-                                            <p>(Please clear cache after upload)</p>
+                                            <p>(Please clear cache after upload;<br/> Only accept JPEG or JPG file only)</p>
                                         </div>
                                         <div class="col-md-5">
                                             <p>

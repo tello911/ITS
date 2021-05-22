@@ -53,7 +53,7 @@
                                                 <td>
                                                     <details>
                                                         <summary style="cursor:pointer;">Click here to download file</summary>
-                                                        <a href="../../1_Admin/<?php echo $row_users['file']?>" download>Download File</a>
+                                                        <a class="btn btn-primary"href="../../1_Admin/<?php echo $row_users['file']?>" download>Download File</a>
                                                     </details>
                                                 </td>
                                             </tr>
@@ -106,11 +106,11 @@
                                 ?>
                             </div>
                             <!-- Controls -->
-                            <a class="left carousel-control" href="../index.php#carousel-example-generic_2" role="button" data-slide="prev">
+                            <a class="left carousel-control" href="../li_info.php#carousel-example-generic_2" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="right carousel-control" href="../index.php#carousel-example-generic_2" role="button" data-slide="next">
+                            <a class="right carousel-control" href="../li_info.php#carousel-example-generic_2" role="button" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
