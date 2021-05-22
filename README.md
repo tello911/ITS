@@ -14,6 +14,13 @@ No security effort is applied. So, kindly no SQL injection, XSS attack.
 Thank you!!
 ---------------------------------------------------------------
 -----------------------------------------------------------------
+CREDENTIAL
+
+<img src="credential.JPG" alt="Credential Info">
+
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 ADMIN PART:
 credential:
 username:studen9@gmail.com	password:admin
