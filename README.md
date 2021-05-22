@@ -15,6 +15,11 @@ Thank you!!
 ---------------------------------------------------------------
 -----------------------------------------------------------------
 CREDENTIAL
+`admin` = admin /n
+`li_comm` = li committee /n
+`student` = student /n
+`uc` = university coach
+`ic` = industry coach
 
 <img src="credential.JPG" alt="Credential Info">
 
